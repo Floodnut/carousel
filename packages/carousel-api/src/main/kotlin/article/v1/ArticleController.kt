@@ -4,7 +4,9 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/articles")
-class ArticleController(private val articleService: ArticleService) {
+class ArticleController(
+    private val articleService: ArticleService
+) : AbstractArticleController(articleService) {
 
     @ArticleMapping
     @ResponseStatus(HttpStatus.CREATED)
